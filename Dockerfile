@@ -5,7 +5,7 @@ WORKDIR /lancer-connect
 RUN gem install nokogiri:1.10.9
 COPY Gemfile /lancer-connect/Gemfile
 COPY Gemfile.lock /lancer-connect/Gemfile.lock
-#RUN bundle install
+RUN bundle install
 COPY . /lancer-connect
 
 # Add a script to be executed every time the container starts.
