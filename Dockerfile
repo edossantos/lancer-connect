@@ -8,7 +8,7 @@ RUN apt-get update -yqq \
   && rm -rf /var/lib/apt/lists
 
 # Pre-install gems with native extensions
-RUN gem install nokogiri -v "1.6.8.1"
+RUN gem install nokogiri -v "1.10.9"
 
 RUN mkdir /lancer-connect
 WORKDIR /lancer-connect

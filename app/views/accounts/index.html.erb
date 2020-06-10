@@ -1,0 +1,12 @@
+<div class="">
+    <h1>Dashboard</h1>
+    <% @posts.each do |post| %>
+    <div class="title">
+      <h2><%= post.title %></h2>
+    </div>
+    <div class="description">
+      <p><%= post.description %></p>
+    </div>
+    <% #image_tag post.image.url, class: "img img-fluid" %>
+    <% end %>
+</div>

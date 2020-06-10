@@ -1,0 +1,21 @@
+
+default: &default
+  adapter: postgresql
+  host: db
+  encoding: unicode
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: lancer-connect_development
+test:
+  <<: *default
+  database: lancer-connect_test
+
+production:
+  <<: *default
+  database: lancer-connect_production
+  username: lancer-connect
+  password: <%= ENV['LANCER-CONNECT_DATABASE_PASSWORD'] %>

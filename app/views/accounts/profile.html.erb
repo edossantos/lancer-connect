@@ -1,0 +1,43 @@
+<div class="col-xl-8 col-lg-8">
+  <div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Profile</h6>
+      <div class="dropdown no-arrow">
+      </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+      <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <%= image_tag @account.image.url, class: "img-responsive" %>
+      </div>
+      <div class="col-sm-6 col-md-8">
+          <h4><%= @account.full_name %></h4>
+          <p>
+              <small>Email: <a href="mailto:<%= @account.email %>"><%= @account.email %></a></small>
+              <br />
+              <small><%= "Linkedin: <a href='#{@account.linkedin_url}'>Profile</a> ".html_safe if @account.linkedin_url.present? %></small>
+              <br />
+              <small><%= "Github: <a href='#{@account.github_url}'>Profile</a> ".html_safe if @account.github_url.present? %></small>
+              <br />
+              <small><%= "Website: <a href='#{@account.personal_website_url}'>Page</a> ".html_safe if @account.personal_website_url.present? %></small>
+
+          <!-- Split button -->
+          <div class="btn-group">
+            <%= link_to "Edit profile", edit_account_registration_path, class: "btn btn-secondary" %>
+          </div>
+      </div>
+  </div>
+      </div>
+      <div class="mt-4 small">
+        <span class="mr-2"><%= @account.posts.count %> Posts</span>
+        <span class="mr-2"> 0 Followers
+        </span>
+        <span class="mr-2">0 Following
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
