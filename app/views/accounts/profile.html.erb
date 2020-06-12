@@ -7,6 +7,7 @@
       </div>
     </div>
     <!-- Card Body -->
+
     <div class="card-body">
       <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
       <div class="row">
@@ -16,14 +17,29 @@
       <div class="col-sm-6 col-md-8">
           <h4><%= @account.full_name %></h4>
           <p>
-              <small>Email: <a href="mailto:<%= @account.email %>"><%= @account.email %></a></small>
+              <small class="mb-2">Email: <a href="mailto:<%= @account.email %>"><%= @account.email %></a></small>
               <br />
-              <small><%= "Linkedin: <a href='#{@account.linkedin_url}'>Profile</a> ".html_safe if @account.linkedin_url.present? %></small>
-              <br />
-              <small><%= "Github: <a href='#{@account.github_url}'>Profile</a> ".html_safe if @account.github_url.present? %></small>
-              <br />
-              <small><%= "Website: <a href='#{@account.personal_website_url}'>Page</a> ".html_safe if @account.personal_website_url.present? %></small>
-
+              <small class="mr-2">
+                <% if @account.linkedin_url.present? %>
+                  <a href="<%= @account.linkedin_url %>">
+                    <%= fa_icon "linkedin 2x"%>
+                  </a>
+                <% end %>
+              </small>
+              <small class="mr-2">
+                <% if @account.github_url.present? %>
+                  <a href="<%= @account.github_url %>">
+                    <%= fa_icon "github 2x"%>
+                  </a>
+                <% end %>
+              </small>
+              <small class="mr-2">
+                <% if @account.personal_website_url.present? %>
+                  <a href="<%= @account.personal_website_url %>">
+                    <%= fa_icon "globe 2x"%>
+                  </a>
+                <% end %>
+              </small>
           <!-- Split button -->
           <div class="btn-group">
             <%= link_to "Edit profile", edit_account_registration_path, class: "btn btn-secondary" %>

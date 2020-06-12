@@ -12,9 +12,10 @@
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow">
       <% if account_signed_in? %>
-      <%= link_to(profile_path(current_account.username), class: "nav-link dropdown-toggle") do %>
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">My Profile</span>
-      <% end %>
+        <%= link_to(profile_path(current_account.username), class: "nav-link dropdown-toggle") do %>
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">My Profile</span>
+          <%= image_tag current_account.image.url, class: "img-profile rounded-circle" %>
+        <% end %>
       <% else %>
         <%= link_to(new_account_session_path, class: "nav-link dropdown-toggle") do %>
           <span class="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>

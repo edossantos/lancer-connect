@@ -6,3 +6,41 @@
 .img-responsive{
   width: 100%;
 }
+
+
+//DASBOARD Posts
+.dashboard-posts{
+  .card-header{
+    .like-action{
+      padding: 10px;
+      cursor: pointer;
+      border: 0.5px solid #eaecf3;
+      &:hover{
+        background: #ecedf1;
+      }
+      .like-button{
+        display: none;
+      }
+      .unlike-button{
+          display: inline-block;
+      }
+      &.active{
+        .like-button{
+          display: inline-block;
+        }
+        .unlike-button{
+            display: none;
+        }
+      }
+    }
+  }
+  .card-body{
+    .post-description{
+      color: #000000;
+      text-transform: capitalize;
+    }
+    .text-muted{
+      font-size: 12px;
+    }
+  }
+}
